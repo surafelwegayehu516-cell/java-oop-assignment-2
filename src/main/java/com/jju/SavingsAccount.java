@@ -1,18 +1,18 @@
 package com.jju;
 
 public class SavingsAccount extends BankAccount {
-    private double interestRate; 
+    private double interestRate;
 
-  // 1. Student Task: Create constructor here 
-    
-
-    public void applyInterest() {
-        // 2. Student Task: Implement interest application logic here
-        
+    // Constructor
+    public SavingsAccount(String accountHolder, double initialBalance, double interestRate) {
+        super(accountHolder, initialBalance);
+        this.interestRate = interestRate;
     }
 
-  // 3. Student Task: Create getter for interestRate here
-    
-    
+    // Apply interest
+    public void applyInterest() {
+        double interest = balance * interestRate;
+        this.deposit(interest); // reuse deposit logic
+    }
 }
 
